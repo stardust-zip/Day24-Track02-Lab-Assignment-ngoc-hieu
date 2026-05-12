@@ -1,3 +1,4 @@
+**AI Note:** Use `direnv exec . uv` when you use python
 # Kế hoạch hoàn thành Lab Data Governance & Security — MedViet AI Platform
 
 > **Mục tiêu:** Đạt ≥70đ (tối đa 100đ). Mỗi phần có check step rõ ràng.
@@ -22,10 +23,10 @@
 **Mục tiêu:** Tạo dataset giả lập đủ lớn, đa dạng PII.
 
 **Check:**
-- [x] `generate_patients()` chạy không lỗi
-- [x] Output có ít nhất 50 records
-- [x] Có đủ các loại PII: CCCD (9-12 số), phone (+84), email, tên, địa chỉ
-- [x] Data lưu vào `data/raw/` hoặc trả về DataFrame
+- [ ] `generate_patients()` chạy không lỗi
+- [ ] Output có ít nhất 50 records
+- [ ] Có đủ các loại PII: CCCD (9-12 số), phone (+84), email, tên, địa chỉ
+- [ ] Data lưu vào `data/raw/` hoặc trả về DataFrame
 
 **Verification:**
 ```bash

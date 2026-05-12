@@ -1,17 +1,17 @@
-# src/encryption/vault.py
-import os
 import base64
-import hashlib
+import json
+import os
+
+import pandas as pd
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.backends import default_backend
+
 
 class SimpleVault:
     """
-    Mô phỏng envelope encryption pattern (thay thế AWS KMS cho local dev).
-    
+    Mo phong envelope encryption pattern (thay the AWS KMS cho local dev).
+
     Architecture:
-        Master Key (KEK) → encrypts → Data Key (DEK) → encrypts → Data
+        Master Key (KEK) -> encrypts -> Data Key (DEK) -> encrypts -> Data
     """
 
     def __init__(self, master_key_path: str = ".vault_key"):
@@ -20,10 +20,14 @@ class SimpleVault:
 
     def _load_or_create_kek(self) -> bytes:
         """
-        TODO: Load KEK từ file nếu tồn tại, 
-              ngược lại generate 32-byte random key và lưu vào file.
-        QUAN TRỌNG: Trong production, KEK phải lưu trong HSM/KMS, không phải file.
+        Load KEK tu environment variable (uu tien) hoac file.
+        Neu khong co, generate moi va luu vao file (chi dung local dev).
+        QUAN TRONG: Trong production, KEK phai luu trong HSM/KMS, khong phai file.
         """
+        env_key = os.environ.get("MEDVIET_KEK")
+        if env_key:
+            return base64.b64decode(env_key)
+
         if os.path.exists(self.master_key_path):
             with open(self.master_key_path, "rb") as f:
                 return base64.b64decode(f.read())
@@ -31,27 +35,25 @@ class SimpleVault:
             kek = os.urandom(32)  # 256-bit key
             with open(self.master_key_path, "wb") as f:
                 f.write(base64.b64encode(kek))
+            os.chmod(self.master_key_path, 0o600)
             return kek
 
     def generate_dek(self) -> tuple[bytes, bytes]:
         """
-        TODO: Generate một Data Encryption Key (DEK) mới.
-        Trả về (plaintext_dek, encrypted_dek).
-        Dùng AESGCM để encrypt DEK bằng KEK.
+        Generate mot Data Encryption Key (DEK) moi.
+        Tra ve (plaintext_dek, encrypted_dek).
+        Dung AESGCM de encrypt DEK bang KEK.
         """
         plaintext_dek = os.urandom(32)
-
-        # Encrypt DEK bằng KEK
         aesgcm = AESGCM(self.kek)
         nonce = os.urandom(12)
         encrypted_dek = nonce + aesgcm.encrypt(nonce, plaintext_dek, None)
-
         return plaintext_dek, encrypted_dek
 
     def decrypt_dek(self, encrypted_dek: bytes) -> bytes:
         """
-        TODO: Decrypt encrypted DEK bằng KEK.
-        Trả về plaintext DEK.
+        Decrypt encrypted DEK bang KEK.
+        Tra ve plaintext DEK.
         """
         nonce = encrypted_dek[:12]
         ciphertext = encrypted_dek[12:]
@@ -60,64 +62,61 @@ class SimpleVault:
 
     def encrypt_data(self, plaintext: str) -> dict:
         """
-        TODO: Implement envelope encryption.
-        1. Generate DEK mới
-        2. Encrypt data bằng plaintext DEK
-        3. Xóa plaintext DEK khỏi memory
-        4. Trả về dict chứa encrypted_dek và ciphertext (base64 encoded)
-        
-        Return format:
-        {
-            "encrypted_dek": "<base64>",
-            "ciphertext": "<base64>",
-            "algorithm": "AES-256-GCM"
-        }
+        Implement envelope encryption.
+        1. Generate DEK moi
+        2. Encrypt data bang plaintext DEK
+        3. Xoa plaintext DEK khoi memory
+        4. Tra ve dict chua encrypted_dek va ciphertext (base64 encoded)
         """
         plaintext_dek, encrypted_dek = self.generate_dek()
-
-        # TODO: encrypt data bằng plaintext_dek
         aesgcm = AESGCM(plaintext_dek)
         nonce = os.urandom(12)
-        ciphertext = ___   # TODO
-
-        # Xóa plaintext DEK
+        # AESGCM.encrypt returns ciphertext || auth_tag (16 bytes)
+        ciphertext_with_tag = aesgcm.encrypt(nonce, plaintext.encode("utf-8"), None)
         del plaintext_dek
 
         return {
             "encrypted_dek": base64.b64encode(encrypted_dek).decode(),
-            "ciphertext": base64.b64encode(nonce + ciphertext).decode(),
-            "algorithm": "AES-256-GCM"
+            # Store nonce || ciphertext_with_tag so decrypt knows the nonce
+            "ciphertext": base64.b64encode(nonce + ciphertext_with_tag).decode(),
+            "algorithm": "AES-256-GCM",
         }
 
     def decrypt_data(self, encrypted_payload: dict) -> str:
         """
-        TODO: Decrypt data từ envelope encryption payload.
-        1. Decrypt DEK bằng KEK
-        2. Decrypt data bằng DEK
-        3. Trả về plaintext string
+        Decrypt data tu envelope encryption payload.
+        1. Decrypt DEK bang KEK
+        2. Decrypt data bang DEK
+        3. Tra ve plaintext string
         """
         encrypted_dek = base64.b64decode(encrypted_payload["encrypted_dek"])
-        ciphertext_with_nonce = base64.b64decode(encrypted_payload["ciphertext"])
-
-        # TODO: implement decryption
-        plaintext_dek = ___   # TODO
-        nonce = ___           # TODO (first 12 bytes)
-        ciphertext = ___      # TODO (remaining bytes)
-
+        ciphertext_with_tag = base64.b64decode(encrypted_payload["ciphertext"])
+        plaintext_dek = self.decrypt_dek(encrypted_dek)
+        nonce = ciphertext_with_tag[:12]
+        cipher = ciphertext_with_tag[12:]
         aesgcm = AESGCM(plaintext_dek)
-        plaintext = aesgcm.decrypt(nonce, ciphertext, None)
+        plaintext = aesgcm.decrypt(nonce, cipher, None)
         del plaintext_dek
+        return plaintext.decode("utf-8")
 
-        return plaintext.decode()
-
-    def encrypt_column(self, df, column: str) -> pd.DataFrame:
+    def encrypt_column(self, df: pd.DataFrame, column: str) -> pd.DataFrame:
         """
-        TODO: Encrypt một cột trong DataFrame.
-        Thay thế giá trị gốc bằng JSON string của encrypted payload.
+        Encrypt mot cot trong DataFrame.
+        Thay the gia tri goc bang JSON string cua encrypted payload.
         """
-        import json
         df = df.copy()
         df[column] = df[column].apply(
             lambda x: json.dumps(self.encrypt_data(str(x)))
+        )
+        return df
+
+    def decrypt_column(self, df: pd.DataFrame, column: str) -> pd.DataFrame:
+        """
+        Decrypt mot cot da ma hoa trong DataFrame.
+        Giai ma tu JSON string cua encrypted payload.
+        """
+        df = df.copy()
+        df[column] = df[column].apply(
+            lambda x: self.decrypt_data(json.loads(x))
         )
         return df
