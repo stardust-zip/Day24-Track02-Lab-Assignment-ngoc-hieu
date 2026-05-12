@@ -1,0 +1,51 @@
+patient_id,ho_ten,cccd,so_dien_thoai,email,dia_chi,ngay_sinh,benh,ket_qua_xet_nghiem
+P00001,Khoa Bùi,425167064924,08402350290,khoa.bùi89@outlook.com,"8 Lê Khu, JohnHuyện, 286105",1996-12-13,Bệnh Alzheimer,HbA1c: 6.5%
+P00002,Huy Trần,595527297521,07655870412,huy.trần20@email.com,"2 John Tổ, JaneThành phố, 708434",1995-03-30,Tăng huyết áp,eGFR: 45 mL/min/1.73m2
+P00003,Ông Trung Hoàng,735621713048,07071595356,ông.trung.hoàng71@outlook.com,"Quận JaneHuyện, 8 John Đường, 401810",1985-08-18,Viêm khớp dạng thấp,Cholesterol: 220 mg/dL
+P00004,Khoa Xuân Vũ,698584340291,07529262102,khoa.xuân.vũ9@outlook.com,"04 Mai Ngõ, Quận JanePhường, 313963",1989-03-07,Viêm khớp dạng thấp,eGFR: 75 mL/min/1.73m2
+P00005,Cô Lan Hoàng,558065657939,05553650555,cô.lan.hoàng54@gmail.com,"782 Nguyễn Số, JaneXã, 530705",1975-03-07,Suy thận mạn,Cholesterol: 180 mg/dL
+P00006,Xuân Nguyễn,137760153458,03233446717,xuân.nguyễn16@gmail.com,"694 Vũ Đường, Thành phố JanePhường, 667661",1962-12-30,Bệnh phổi tắc nghẽn mãn tính,HbA1c: 6.5%
+P00007,Bà Lâm Mai,290355449769,03427790628,bà.lâm.mai66@outlook.com,"5 Nguyễn Số, JohnQuận, 737591",1994-12-26,Đái tháo đường,Glucose: 140 mg/dL
+P00008,Lâm Bùi,431046943888,07795394258,lâm.bùi77@outlook.com,"372 Jane Tổ, JaneQuận, 780674",2007-10-25,Bệnh phổi tắc nghẽn mãn tính,MRI não: Không phát hiện bệnh lý
+P00009,Lâm Trí Lê,902353857267,08349471130,lâm.trí.lê59@email.com,"99 John Tổ, Huyện JaneHuyện, 516171",2006-02-18,Bệnh Parkinson,Glucose: 95 mg/dL
+P00010,Hồng Vũ,675809847064,03350156617,hồng.vũ80@outlook.com,"437 John Đường, Huyện JaneHuyện, 220766",1977-10-17,Bệnh phổi tắc nghẽn mãn tính,MRI não: Không phát hiện bệnh lý
+P00011,Kim Thị Phạm,983025959362,07015335226,kim.thị.phạm20@gmail.com,"43 Vũ Đường, Thành phố JohnHuyện, 691657",1963-01-12,Suy thận mạn,Huyết áp: 160/100 mmHg
+P00012,Bảo Vũ,519456222057,09928015983,bảo.vũ53@gmail.com,"152 Jane Dãy, JohnQuận, 244060",1964-05-16,Tiểu đường type 2,X-quang ngực: Bình thường
+P00013,Trọng Lê,050355269138,08077804545,trọng.lê94@gmail.com,"40 Jane Tổ, Thành phố JaneThành phố, 824127",2001-09-15,Đái tháo đường,eGFR: 75 mL/min/1.73m2
+P00014,Huy Vũ,006923377384,03656647758,huy.vũ63@email.com,"3 Jane Hẻm, Huyện JaneXã, 885612",1958-11-12,Bệnh dạ dày,HbA1c: 6.5%
+P00015,Chị Khoa Dương,108221964018,03004993236,chị.khoa.dương24@email.com,"069 John Số, Thành phố JaneQuận, 373544",2010-10-31,Gan nhiễm mỡ,HbA1c: 7.2%
+P00016,Nam Lê,867873720202,03526689491,nam.lê71@gmail.com,"0 Trần Dãy, JaneThành phố, 972445",1988-06-22,Bệnh tim mạch,LDL: 160 mg/dL
+P00017,Hương Đặng,386049781574,08381751637,hương.đặng56@yahoo.com,"9 Phạm Ngõ, Huyện JohnHuyện, 612815",1997-10-07,Bệnh Parkinson,Glucose: 140 mg/dL
+P00018,Cô Mai Nguyễn,675763559243,05512487319,cô.mai.nguyễn9@outlook.com,"90 Bùi Số, JohnQuận, 698290",2007-07-09,Bệnh Alzheimer,Cholesterol: 220 mg/dL
+P00019,Ông Quang Mai,959676061279,09724968652,ông.quang.mai46@email.com,"865 John Khu, Quận JaneQuận, 354961",1974-02-28,Bệnh phổi tắc nghẽn mãn tính,LDL: 130 mg/dL
+P00020,Nhật Văn Dương,635951519322,09701517307,nhật.văn.dương91@outlook.com,"7 Mai Số, Huyện JaneQuận, 353256",1952-02-13,Đái tháo đường,MRI não: Không phát hiện bệnh lý
+P00021,Khoa Hữu Đặng,868295569079,07197227048,khoa.hữu.đặng46@email.com,"5 Jane Tổ, Thị xã JaneHuyện, 741771",1985-08-22,Bệnh tuyến giáp,LDL: 160 mg/dL
+P00022,Thành Vũ,488648599439,05206962756,thành.vũ70@yahoo.com,"68 Hoàng Số, JohnThành phố, 218693",1994-08-20,Suy thận mạn,CT scan: Không bất thường
+P00023,Thành Quang Phạm,962042877039,09632458783,thành.quang.phạm95@yahoo.com,"9 Jane Hẻm, Thành phố JohnPhường, 953337",1966-05-25,Đái tháo đường,Cholesterol: 180 mg/dL
+P00024,Hạnh Vũ,590265069967,07370697698,hạnh.vũ13@outlook.com,"JaneThành phố, 9 Vũ Làng, 967074",1960-11-13,Bệnh dạ dày,LDL: 160 mg/dL
+P00025,Hưng Đức Dương,797325455622,07759558201,hưng.đức.dương77@yahoo.com,"6 John Hẻm, JaneQuận, 168475",1996-10-02,Bệnh tim mạch,HDL: 55 mg/dL
+P00026,Anh Tùng Dương,840280563302,09132834278,anh.tùng.dương42@gmail.com,"283 Lê Ngõ, Thị xã JohnHuyện, 603600",1984-02-05,Đau thắt ngực,HbA1c: 6.5%
+P00027,Quang Bảo Trần,214942152090,09448588362,quang.bảo.trần76@yahoo.com,"529 Dương Đường, JohnThị xã, 132073",1957-04-23,Bệnh tim mạch,HbA1c: 6.5%
+P00028,Dũng Trần,144982398971,07367808667,dũng.trần75@email.com,"376 Mai Ngõ, JohnPhường, 764481",1962-10-08,Gan nhiễm mỡ,HbA1c: 8.1%
+P00029,Bà Bảo Hoàng,497990580837,08738894151,bà.bảo.hoàng18@email.com,"66 John Tổ, JohnThành phố, 153539",1961-10-15,Bệnh phổi tắc nghẽn mãn tính,eGFR: 75 mL/min/1.73m2
+P00030,Chị Linh Trần,451045376338,05685715156,chị.linh.trần71@email.com,"5 Trần Đường, JaneThành phố, 240575",1998-01-22,Rối loạn lipid máu,HbA1c: 7.2%
+P00031,Anh Mai,454790575956,05506355556,anh.mai69@yahoo.com,"3 Trần Khu, Thành phố JohnQuận, 967598",1982-08-16,Bệnh phổi tắc nghẽn mãn tính,CT scan: Không bất thường
+P00032,Phương Hải Lê,743630083966,07849304096,phương.hải.lê29@gmail.com,"8 Jane Khu, JanePhường, 644714",1950-10-07,Gan nhiễm mỡ,LDL: 160 mg/dL
+P00033,Quý ông Quang Trần,825736265481,05172367973,quý.ông.quang.trần78@gmail.com,"03 Jane Tổ, Thành phố JaneXã, 999480",1971-03-26,Bệnh tim mạch,HbA1c: 6.5%
+P00034,Hưng Bảo Nguyễn,519365688080,05498586234,hưng.bảo.nguyễn67@outlook.com,"204 Jane Dãy, Thành phố JaneThị xã, 203502",1953-11-27,Bệnh Parkinson,Cholesterol: 180 mg/dL
+P00035,Chị Bảo Trần,999454472892,09482504981,chị.bảo.trần54@email.com,"154 John Tổ, JaneQuận, 362360",2007-10-15,Bệnh phổi tắc nghẽn mãn tính,HbA1c: 6.5%
+P00036,An Trí Phạm,626734390579,03364792957,an.trí.phạm51@gmail.com,"12 Jane Số, JaneThị xã, 161694",1991-01-25,Suy thận mạn,Huyết áp: 140/90 mmHg
+P00037,Hạnh Đặng,845180022276,07626052895,hạnh.đặng39@outlook.com,"78 Jane Ngõ, Thành phố JaneXã, 639589",1982-12-03,Tiểu đường type 2,Cholesterol: 180 mg/dL
+P00038,Khoa Xuân Hoàng,833694158623,08760846608,khoa.xuân.hoàng27@gmail.com,"47 Bùi Khu, JaneHuyện, 168301",2008-06-21,Bệnh tim mạch,eGFR: 75 mL/min/1.73m2
+P00039,Thành Lê,234124878641,03942511785,thành.lê63@email.com,"688 Trần Khu, JaneThị xã, 310821",1988-06-19,Tiểu đường type 2,HbA1c: 7.2%
+P00040,Bà Phương Phạm,152173245503,09784771748,bà.phương.phạm72@yahoo.com,"4 John Tổ, Thị xã JaneThị xã, 201262",1977-06-21,Bệnh Alzheimer,Huyết áp: 140/90 mmHg
+P00041,Cô Hải Bùi,128060159541,05051996324,cô.hải.bùi25@gmail.com,"560 John Tổ, Quận JanePhường, 377989",1953-02-23,Bệnh tuyến giáp,eGFR: 75 mL/min/1.73m2
+P00042,Kim Đặng,201950075368,03093632222,kim.đặng29@outlook.com,"38 John Khu, Quận JaneQuận, 781245",1976-05-29,Bệnh dạ dày,MRI não: Không phát hiện bệnh lý
+P00043,Linh Trần,338870775485,03517112346,linh.trần24@gmail.com,"69 Hoàng Tổ, Thành phố JaneThành phố, 134682",1965-12-23,Bệnh Alzheimer,MRI não: Không phát hiện bệnh lý
+P00044,Cô Duyên Trần,454152876377,05878587009,cô.duyên.trần52@outlook.com,"709 Jane Dãy, JaneHuyện, 240534",1967-03-19,Viêm phổi,eGFR: 45 mL/min/1.73m2
+P00045,Linh Vũ,726103748540,09999241560,linh.vũ63@email.com,"2 Jane Tổ, JaneXã, 131671",1978-09-14,Rối loạn lipid máu,Huyết áp: 120/80 mmHg
+P00046,Tùng Vũ,614421007180,05455426272,tùng.vũ44@outlook.com,"246 Đặng Đường, JohnHuyện, 208058",1995-04-14,Bệnh Alzheimer,Glucose: 140 mg/dL
+P00047,Cô Hương Dương,900357823781,03291425933,cô.hương.dương30@outlook.com,"4 John Số, Thị xã JohnQuận, 976505",1988-02-13,Suy thận mạn,eGFR: 45 mL/min/1.73m2
+P00048,Hoàng Mai,135716513978,05051254974,hoàng.mai75@yahoo.com,"3 Nguyễn Đường, Huyện JaneThị xã, 150959",1968-03-25,Bệnh tim mạch,eGFR: 75 mL/min/1.73m2
+P00049,Thành Quang Trần,831933100859,09921436078,thành.quang.trần30@email.com,"434 Jane Đường, JaneQuận, 211887",2008-01-29,Bệnh dạ dày,LDL: 130 mg/dL
+P00050,Quý ông Hoàng Vũ,201418012551,07525751075,quý.ông.hoàng.vũ30@email.com,"270 Dương Dãy, Thành phố JaneXã, 538726",1997-05-03,Viêm phổi,Cholesterol: 180 mg/dL
